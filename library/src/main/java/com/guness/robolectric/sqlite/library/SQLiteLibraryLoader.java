@@ -56,7 +56,7 @@ public class SQLiteLibraryLoader {
             throw new RuntimeException("Cannot extract SQLite library into " + extractedLibraryPath, e);
         }
         loadFromDirectory(tempDir);
-        logWithTime("SQLite natives prepared in", startTime);
+        logWithTime(startTime);
     }
 
     public String getLibClasspathResourceName() {
@@ -67,8 +67,8 @@ public class SQLiteLibraryLoader {
         return Resources.asByteSource(Resources.getResource("libs/" + getLibClasspathResourceName()));
     }
 
-    private void logWithTime(final String message, final long startTime) {
-        log(message + " " + (System.currentTimeMillis() - startTime));
+    private void logWithTime(final long startTime) {
+        log("SQLite natives prepared in" + " " + (System.currentTimeMillis() - startTime));
     }
 
     private void log(final String message) {

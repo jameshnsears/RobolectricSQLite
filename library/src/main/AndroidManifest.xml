@@ -1,2 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.guness.robolectric.sqlite.library"/>
+<manifest package="com.guness.robolectric.sqlite.library" />
