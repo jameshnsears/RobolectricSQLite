@@ -36,9 +36,17 @@ publishing {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.almworks.sqlite4java:sqlite4java:1.0.392'
+    implementation 'com.almworks.sqlite4java:sqlite4java:' + almworks_version
+
     implementation 'com.google.guava:guava:30.0-jre'
 
     implementation project(":binaries")
 }
 
+shadowJar {
+    dependencies {
+        exclude(dependency('com.almworks.sqlite4java:sqlite4java:' + almworks_version))
+        exclude(dependency('com.google.guava:guava:30.0-jre'))
+
+    }
+}
